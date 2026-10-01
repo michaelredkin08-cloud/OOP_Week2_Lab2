@@ -45,6 +45,12 @@ namespace Lab_2
                 // Similar logic for ordinary level subjects
             }
 
+            foreach (string line in File.ReadAllLines(path1)) // foreach is used here for exercise 2 as well
+            {
+                Console.WriteLine(line);
+
+            }
+
 
 
         }
