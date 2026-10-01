@@ -12,7 +12,7 @@
 
 
             // Calculate total points and append to the file
-            int totalPoints = 0, smallestGrade = 0;
+            int totalPoints = 0, smallestGrade = 100;
             for (int i = 0; i < 7; i++)
             {
                 
@@ -23,6 +23,11 @@
                 {
                     smallestGrade = currentGrade;
                 }
+                if (i == 6)
+                {
+                    int totalPointsToAppend = totalPoints - smallestGrade;
+                    File.AppendAllText(path1, totalPointsToAppend + Environment.NewLine);
+                }
             }
 
 
@@ -31,7 +36,7 @@
 
 
             //Display the contents of the file
-            foreach (string line in readLines)
+            foreach (string line in File.ReadAllLines(path1))
             {
                 Console.WriteLine(line);
 
